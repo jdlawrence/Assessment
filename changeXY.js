@@ -17,12 +17,27 @@ changeXY('xhixhix') → 'yhiyhiy'
 //                                     return y <-+      +-> return ''
 
 
-
+var _ = {};
 _.changeXY = function(string) {
 //1st need to checking string.length either equal 0 or not.
 // if not, resuing recursion 
+if(string.length === 0) {
+  return ""
+} else {
+  //recursion is calling from the very last case,
+  // so have to think about the very last time how to stop from the base case.
+  var firstLetter = string[0]
+  if(firstLetter === 'x') {
+    firstLetter = 'y'
+  console.log(string)
+  console.log(string.substr(1))
+    
+  }
+  return firstLetter +_.changeXY(string.substr(1))
+}
 
 };
+_.changeXY('codex')
 // _.changeXY = function(string) {
 //   var newString = ''
 // if (string.length === 0) {
