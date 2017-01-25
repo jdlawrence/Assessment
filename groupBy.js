@@ -19,7 +19,7 @@ _.groupBy = function(collection, iteratorOrstring) {
     return result;
   } else {
     key = iteratorOrstring(collection[0])
-    result[key] = collection[0]
+    result[key] = [collection[0]]
     console.log(result)
     restOfCollection = collection.slice(1)
 
