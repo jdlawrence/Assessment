@@ -57,6 +57,24 @@ _.changeXY('codex')
  //    };
  //  };
  // }
+ /* explain for sophie in the console :
+ <1>_.changeXY( codex )
+ add firstLetter  c  with _.changeXY( odex )
+ <2>_.changeXY( odex )
+ add firstLetter  o  with _.changeXY( dex )
+ <3>_.changeXY( dex )
+ add firstLetter  d  with _.changeXY( ex )
+ _.changeXY( ex )
+ add firstLetter  e  with _.changeXY( x )
+<4> add firstLetter  y  with _.changeXY(  )
+  <5>_.changeXY(  )
+ <5> change restof string result is   end
+ <4>change restof string result is  y end
+ <3>change restof string result is  ey end
+ <2> change restof string result is  dey end
+ <1> change restof string result is  odey end
+ codey
+*/
 
 
 var _ = {};
