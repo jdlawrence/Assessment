@@ -15,14 +15,20 @@ var _ = {};
 
 _.groupBy = function(collection, iteratorOrstring) {
   var result ={};
-  for(var i = 0; i < collection.length; i++) {
-    if(typeof iteratorOrstring === 'function' ) {
-      key = iteratorOrstring(collection[i]) 
-      console.log(key)
+  if(collection.length === 0) {
+    return result;
+  } else {
+    key = iteratorOrstring(collection[0])
+    result[key] = collection[0]
+    console.log(result)
+    restOfCollection = collection.slice(1)
 
 
-    }
   }
+  
+
+
+
 return result;
 };
 
