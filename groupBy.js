@@ -14,30 +14,16 @@
 var _ = {};
 
 _.groupBy = function(collection, iteratorOrstring) {
-  var result = {};
+  var result ={};
+  for(var i = 0; i < collection.length; i++) {
+    if(typeof iteratorOrstring === 'function' ) {
+      key = iteratorOrstring(collection[i]) 
+      console.log(key)
 
-  collection.forEach(function(element, indexOrKey, collection) {
-    if (iteratorOrstring === 'string') {
 
-    } else {
-      // 1.3
-      // {}
-      // {1: [1.3]}
-
-      // element  = 1.3 result = {}
-      // element  = 1.3 result = {} firstValue = []
-      var firstValue =[];
-      key = iteratorOrstring(element);
-      // key = 1 result ={}
-      firstValue.push(element)
-      result[key] = firstValue
-      /// this returns undefined: firstValue.push(element), undefined.slice()
-      //console.log(result = { 1: [1.3]})
-      console.log(result);
     }
-
-
-  });
-  // your code here!
+  }
+return result;
 };
-_.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+
+ _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
