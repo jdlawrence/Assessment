@@ -23,7 +23,7 @@ _.groupBy = function(collection, iteratorOrstring) {
     console.log(result)
     restOfCollection = collection.slice(1)
     _.groupBy(restOfCollection, iteratorOrstring) 
-    
+
 
 
   }
