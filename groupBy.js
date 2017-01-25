@@ -22,6 +22,8 @@ _.groupBy = function(collection, iteratorOrstring) {
     result[key] = [collection[0]]
     console.log(result)
     restOfCollection = collection.slice(1)
+    _.groupBy(restOfCollection, iteratorOrstring) 
+    
 
 
   }
