@@ -19,23 +19,20 @@ var result ={}
      var key = null;
     if (typeof iteratorOrstring === 'function') {
       key = iteratorOrstring(element)
-      console.log(22,result)
+    } else if (element[iteratorOrstring] !== undefined) {
+      key = element[iteratorOrstring]
+      console.log(result)
     }
     if (key && result[key] === undefined ) {
       result[key] = []
     }
 
-  //   } else {
-  //      if (iteratorOrstring === 'string') {
-
-  //      } else if (iteratorOrstring === undefined) {
-
-  //      } 
-
-  //   }
+ 
   result[key].push(element)
   })
   return result;
 };
 
- _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+ // _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+ _.groupBy(['one', 'two', 'three'], 'length');
+// returns {3: ["one", "two"], 5: ["three"]}
