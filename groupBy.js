@@ -5,7 +5,7 @@
 
 // Examples:
 
-// _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+// _.groupBy([1.3, 2.1, 2.4], function(num){ return Math.floor(num); });
 // // returns {1: [1.3], 2: [2.1, 2.4]}
 
 // _.groupBy(['one', 'two', 'three'], 'length');
@@ -14,24 +14,20 @@
 var _ = {};
 
 _.groupBy = function(collection, iteratorOrstring) {
-  var result ={};
-  if(collection.length === 0) {
-    return result;
-  } else {
-    key = iteratorOrstring(collection[0])
-    result[key] = [collection[0]]
-    console.log(result)
-    restOfCollection = collection.slice(1)
-    _.groupBy(restOfCollection, iteratorOrstring) 
+var result ={}
+  collection.forEach(function(element) {
+    if (iteratorOrstring === 'function') {
 
+    } else {
+       if (iteratorOrstring === 'string') {
 
+       } else if (iteratorOrstring === undefined) {
+        
+       } 
 
-  }
-  
-
-
-
-return result;
+    }
+  })
+  return result;
 };
 
- _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+ //_.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
