@@ -16,18 +16,26 @@ var _ = {};
 _.groupBy = function(collection, iteratorOrstring) {
 var result ={}
   collection.forEach(function(element) {
-    if (iteratorOrstring === 'function') {
-
-    } else {
-       if (iteratorOrstring === 'string') {
-
-       } else if (iteratorOrstring === undefined) {
-        
-       } 
-
+     var key = null;
+    if (typeof iteratorOrstring === 'function') {
+      key = iteratorOrstring(element)
+      console.log(22,result)
     }
+    if (key && result[key] === undefined ) {
+      result[key] = []
+    }
+
+  //   } else {
+  //      if (iteratorOrstring === 'string') {
+
+  //      } else if (iteratorOrstring === undefined) {
+
+  //      } 
+
+  //   }
+
   })
   return result;
 };
 
- //_.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+ _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
