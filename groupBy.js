@@ -33,7 +33,7 @@ var result ={}
   //      } 
 
   //   }
-
+  result[key].push(element)
   })
   return result;
 };
