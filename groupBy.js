@@ -14,6 +14,25 @@
 var _ = {};
 
 _.groupBy = function(collection, iteratorOrstring) {
-  // your code here!
+var result ={}
+  collection.forEach(function(element) {
+     var key = null;
+    if (typeof iteratorOrstring === 'function') {
+      key = iteratorOrstring(element)
+    } else if (element[iteratorOrstring] !== undefined) {
+      key = element[iteratorOrstring]
+      console.log(result)
+    }
+    if (key && result[key] === undefined ) {
+      result[key] = []
+    }
+
+ 
+  result[key].push(element)
+  })
+  return result;
 };
 
+ // _.groupBy([1.3, 2.1, 2.4, 3.5, 4,7], function(num){ return Math.floor(num); });
+ _.groupBy(['one', 'two', 'three'], 'length');
+// returns {3: ["one", "two"], 5: ["three"]}
